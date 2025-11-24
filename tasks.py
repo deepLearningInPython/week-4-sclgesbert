@@ -292,7 +292,7 @@ np.all(sigmoid(np.log([1, 1/3, 1/7])) == np.array([1/2, 1/4, 1/8]))
 # The return value is the vector of RNN output values (one value for each sequence in list_of_sequences).
 
 
-
+'''
 # Task 10: Translate this function into Python (by hand!)
 
 # Your code here:
@@ -414,4 +414,4 @@ plt.plot(pred)
 plt.plot(linreg_pred)
 plt.legend(['Truth','RNN','LinReg'])
 
-
+'''
