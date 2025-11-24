@@ -93,9 +93,9 @@ print(word_frequencies)
 
 # Your code here:
 # -----------------------------------------------
-def token_counts(string: str, k: int = 1) -> dict:
+def token_counts(string: str, k: int = 0) -> dict:
     tokens = [word.strip(strmod.punctuation).lower() for word in string.split() if word.strip(strmod.punctuation)]
-    freq = {word: tokens.count(word) for word in set(tokens) if tokens.count(word) > k}
+    freq = {word: tokens.count(word) for word in set(tokens) if tokens.count(word) >= k}
     return freq
 
 # test:
