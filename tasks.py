@@ -45,10 +45,10 @@ print(tokens)
 
 # Your code here:
 # -----------------------------------------------
+import string as strmod
 def tokenize(string: str) -> list:
-    tokens = [word.strip(strmod.punctuation).lower()
-    for word in string.split()]
-    unique = sorted({t for t in tokens})
+    tokens = [word.strip(strmod.punctuation).lower() for word in string.split()]
+    unique = sorted(set(tokens))
     return unique
 
 
@@ -94,8 +94,9 @@ print(word_frequencies)
 # Your code here:
 # -----------------------------------------------
 def token_counts(string: str, k: int = 1) -> dict:
-    diction = {word: string.count(word) for word in set(string) if string.count(word) > k}
-    return diction
+    tokens = tokenize(string)
+    freq = {word: tokens.count(word) for word in tokens if tokens.count(word) > k}
+    return freq
 
 # test:
 text_hist = {'the': 2, 'quick': 1, 'brown': 1, 'fox': 1, 'jumps': 1, 'over': 1, 'lazy': 1, 'dog': 1}
